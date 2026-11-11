@@ -17,7 +17,7 @@ Experimental MetaHuman rendering and interchange for Unity 6000.6 and URP 17.6. 
 2. Open `SampleProject` in Unity 6000.6 (Unity Hub > Add project from disk). Its manifest references the package with `file:../../MetahumanURP`. The first import takes several minutes.
 3. Open `Assets/Taro/TaroPhoto.unity` and enter Play mode.
 
-Tested on Apple silicon with Metal only. The face rig uses a native plugin that ships for macOS arm64, and the deferred hair renderer is Metal only.
+Tested on Apple silicon with Metal, and on Windows x64 with Direct3D 12 in the Editor. The face rig uses a native plugin that ships for macOS arm64 and Windows x64.
 
 ## Using the package in another project
 

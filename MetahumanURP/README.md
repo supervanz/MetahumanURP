@@ -7,10 +7,12 @@
 | | Supported | Not validated |
 | --- | --- | --- |
 | Editor | Unity 6000.6, URP 17.6, Forward or Forward+ | Other Unity or URP versions |
-| Graphics | Metal on Apple silicon | Direct3D, Vulkan, OpenGL |
-| Face rig (`DnaRigDriver`) | macOS arm64: the bundled OpenRigLogic plugin | Windows, Intel Macs, Linux |
-| Deferred hair (`GroomDeferredFeature`) | Metal, single-sample cameras | Other graphics APIs, MSAA cameras |
-| Player builds | | All. The plugin is ad-hoc signed, so a macOS player would need signing and notarisation |
+| Graphics | Metal on Apple silicon; Direct3D 12 on Windows x64 (Editor) | Direct3D 11, Vulkan, OpenGL |
+| Face rig (`DnaRigDriver`) | macOS arm64 and Windows x64: the bundled OpenRigLogic plugins | Intel Macs, Linux |
+| Deferred hair (`GroomDeferredFeature`) | Metal or Direct3D 12, single-sample cameras | Other graphics APIs, MSAA cameras |
+| Player builds | | All. The macOS plugin is ad-hoc signed, so a macOS player would need signing and notarisation. The Windows plugin links the MSVC runtime dynamically, so a Windows player needs the Visual C++ 2015-2022 x64 redistributable |
+
+On Windows, the Editor loads a newly added native plugin only after a restart. If `DnaRigDriver` logs `DllNotFoundException: metahuman_riglogic` right after you add or rebuild the plugin, restart the Editor.
 
 ## Install
 
@@ -57,4 +59,4 @@ The sample project in this repository (`SampleProject`) shows these parts workin
 
 ## Third-party
 
-The package statically links [OpenRigLogic](https://github.com/EpicGames/OpenRigLogic) (MIT, Epic Games) in its macOS plugin; see `Third Party Notices.txt`. MetaHuman characters are not part of the package and keep Epic's terms ([metahuman.com/license](https://www.metahuman.com/license)). The repository's `THIRD_PARTY_LICENSES.md` covers the sample's content.
+The package statically links [OpenRigLogic](https://github.com/EpicGames/OpenRigLogic) (MIT, Epic Games) in its macOS and Windows plugins; see `Third Party Notices.txt`. MetaHuman characters are not part of the package and keep Epic's terms ([metahuman.com/license](https://www.metahuman.com/license)). The repository's `THIRD_PARTY_LICENSES.md` covers the sample's content.

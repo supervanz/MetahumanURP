@@ -2,7 +2,7 @@ OpenRigLogic 5.8 / riglogic4 13.2.9
 Upstream: https://github.com/EpicGames/OpenRigLogic
 Commit: d3d329bbd6992ac38adc1c1b24203ceb998f75c0
 
-The bundled macOS arm64 native plugin statically links OpenRigLogic.
+The bundled macOS arm64 and Windows x64 native plugins statically link OpenRigLogic.
 The following license applies to that third-party code. Character DNA and meshes
 are supplied separately and are not covered by this source-code license.
 
